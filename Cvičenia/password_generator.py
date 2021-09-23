@@ -29,3 +29,7 @@ z = int(input("pocet znakov:"))
 
 
 print("Heslo je:" ,generuj_heslo(m,v,c,z))
+
+
+for q in range (p):
+    print("Heslo je:" ,generuj_heslo(m,v,c,z))
