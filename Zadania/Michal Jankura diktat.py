@@ -1,5 +1,13 @@
 import re
+"""
+1. VYTVORENIE PREMENNEJ TEXT
+2. VYTVORENIE PREMENNEJ SLOVA KT. VYTVORÍ ZOZNAM SLOV
+3. POCET_SLOV SPOČÍTA SLOVÁ ZO ZOZNAMU
+4. i ZMEN PÍSMENA V TEXTE NA MALÉ A SPOČITAJ I A Í
+5. y ZMEN PÍSMENA V TEXTE NA MALÉ A SPOČITAJ Y A Ý
+6. VYP. NÁROčNOSŤ
 
+"""
 text = "Kobyla býva v modernom obydlí. Sestra je veľmi bystrá."
 
 slova = text.split()
