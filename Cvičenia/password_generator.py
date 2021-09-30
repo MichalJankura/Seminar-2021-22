@@ -21,15 +21,16 @@ def generuj_heslo (pm,pv,pc,pz):
     return real_heslo
 
 
-
 m = int(input("pocet malych:"))
 v = int(input("pocet velkych:"))
 c = int(input("pocet cisel:"))
 z = int(input("pocet znakov:"))
+p = int(input("Zadaj pocet hesiel : "))
 
-
-print("Heslo je:" ,generuj_heslo(m,v,c,z))
-
+s2 = open("heslá.txt","a",encoding="UTF-8")#a ako append
 
 for q in range (p):
     print("Heslo je:" ,generuj_heslo(m,v,c,z))
+    s2.write(generuj_heslo(m,v,c,z)+"\n")#zapíš do súboru
+s2.close()
+
