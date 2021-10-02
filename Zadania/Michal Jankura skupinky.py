@@ -1,4 +1,5 @@
 import random
+
 def nazov(n):
     samohlasky = "aeiouy"
     spoluhlasky = "qwrtzpasdfghjklmnbvcx"
@@ -10,20 +11,27 @@ def nazov(n):
     return meno
 
 def zapis():
-    global m,n,zoznam
-    zoznam = []
-    m = int(input("Zadaj pocet skupín :"))
+    m = int(input("Zadaj pocet skupín : "))
     n  = int(input("Zadaj n : "))
     for i in range(m):
-        subor = open("Michal Jankura.txt","a",encoding="UTF-8")
+        subor = open("Michal Jankura.txt", "a", encoding="UTF-8")
         subor.write(nazov(n)+"\n")
+        subor.close()
+    file = open("Michal Jankura.txt","r",encoding="UTF-8")
+    txt = file.read()
+    zoznam_skupin = txt.split()
 
-        file = open("Michal Jankura.txt","r",encoding="UTF-8")
+    print("Pocet skupín : ",len(zoznam_skupin))
+    print("Zoznam:",zoznam_skupin)
+    file.close()
+    l = int(input("Pocet skupin na výpis : "))
+    for q in range(l):
+        print(random.choice(zoznam_skupin))
+        subor = open("Michal Jankura.txt", "a", encoding="UTF-8")
+        subor.write(random.choice(zoznam_skupin) + "\n")
+        subor.close()
+        file = open("Michal Jankura.txt", "r", encoding="UTF-8")
         txt = file.read()
-        mena_skupin = txt.split()
-        zoznam.append(mena_skupin)
-    print("Pocet skupín : ",len(mena_skupin)+1)#pocita od nuly
-    print(zoznam)
+        zoznam_skupin = txt.split()
+    print("Pocet skupín po generovani: ", len(zoznam_skupin))
 zapis()
-
-
