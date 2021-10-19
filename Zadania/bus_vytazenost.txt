@@ -1,0 +1,9 @@
+50
+20 0 Štúrovo nám.
+35 0 Mestský park
+10 20 Dargovská
+40 20 Nemocnica
+10 40 Bratská
+5 10 Mestský úrad
+35 10 Partizánska
+0 55 Bernolákova
