@@ -1,0 +1,30 @@
+import turtle
+import random
+tabula = turtle.Screen()
+pero = turtle.Turtle()
+pero.speed(0)
+pero.left(90)
+pero.up()
+pero.setpos()
+vyska = int(input("Zadaj vysku :"))
+jablka = int(input("Pocet jablk"))
+
+def strom(vyska,jablka):
+    pero.width(8)
+    pero.color("brown")
+    pero.forward(vyska*10)
+    pero.up()
+    pero.forward(vyska*10)
+    pero.down()
+    pero.dot(vyska*20,"green")
+    for i in range(jablka):
+        pero.up()
+        pero.setheading(random.randint(0,360))
+        cislo = pero.forward(random.randint(0,vyska*5))
+        pero.down()
+        pero.dot(10,"red")
+        pero.up()
+
+
+strom(vyska,jablka)
+tabula.mainloop()
