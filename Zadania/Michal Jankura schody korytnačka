@@ -1,0 +1,46 @@
+import turtle
+tabula = turtle.Screen()
+pero = turtle.Turtle()
+
+def typ_schodov(vyska,pocet):
+    try:
+        sirka = 63-vyska*2
+    except ValueError:
+        raise ValueError('Nečíselná hodnota pre dĺžku strany obdĺžnika.')
+    if vyska < 0 or pocet < 0:
+        raise ValueError('Záporná hodnota pre schody.')
+    if  10 < sirka < 20:
+        print("Schody sú rampové")
+    elif 20 < sirka < 25:
+        print("Schody sú Mierne")
+    elif 25 < sirka < 35:
+        print("Schdy sú Normálne")
+    elif 35 < sirka < 45:
+        print("Schody sú Strmé")
+    elif 45 < sirka < 60:
+        print("Schody sú rebríkové")
+    pero.up()
+    pero.setpos(-200,-200)
+    pero.down()
+    pero.fillcolor("#8ac2b2")
+    pero.begin_fill()
+    for i in range(pocet):
+        pero.left(90)
+        pero.forward(vyska)
+        pero.right(90)
+        pero.forward(sirka)
+    pero.right(90)
+    pero.forward(vyska*pocet)
+    pero.right(90)
+    pero.forward(sirka*pocet)
+    pero.up()
+    pero.setpos(-200,-220)
+    pero.down()
+    pero.write(f"Normálne schodisko : výška = {vyska*pocet}cm šírka  = {sirka*pocet}cm")
+    pero.hideturtle()
+    return sirka
+vyska = int(tabula.textinput("Schodište","Zadaj výšku schodov"))
+pocet = int(tabula.textinput("Schodište","Zadaj počet schodov"))
+typ_schodov(vyska,pocet)
+
+tabula.mainloop()
