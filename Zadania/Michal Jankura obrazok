@@ -1,0 +1,24 @@
+file = open("preklopenie_obrazka.txt", "r",encoding = "UTF-8")
+velkost = file.readline().split()
+size = []
+for i in velkost:
+    size.append(i)
+subor = file.readlines()
+import tkinter
+canvas = tkinter.Canvas(width =size[0],height=size[1])
+canvas.pack()
+
+def pixel(stvorec):
+    x,y = 0,0
+    farba = ""
+    for i in subor[1:]:
+        x = x+stvorec
+        if i == 1:
+            farba = "black"
+        else :
+            farba = "white"
+        canvas.create_rectangle(x,y,x+stvorec,y+stvorec,fill=str(farba),outline="")
+        while "\n" in subor:
+            y = y+stvorec
+pixel(10)
+canvas.mainloop()
