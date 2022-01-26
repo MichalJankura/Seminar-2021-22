@@ -1,0 +1,12 @@
+a = int(input("Zadaj stranu a : "))
+b = int(input("Zadaj stranu b : "))
+c = int(input("Zadaj stranu c : "))
+
+if a+b > c and a+c>b and b+c>a:
+    print("Trojuholnik je zostrojiteľný")
+else:
+    print("Trojuholnik nemožno zostrojiť ")
+if a==b and a == c :
+    print("Trojuholnik je rovnostranny")
+if a==b and (a,b) != c:
+    print("Trojuholnik je rovnoramenný")
